@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: jwt_postgres
+    environment:
+      POSTGRES_DB: jwt_security
+      POSTGRES_USER: cosic
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - jwt_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  jwt_postgres_data:
